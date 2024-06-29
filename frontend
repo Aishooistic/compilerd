@@ -1,0 +1,21 @@
+import pytest
+from your_module import execute_python_code, execute_ruby_code, execute_go_code  # Adjust imports as needed
+
+def test_python_execution():
+    code = "print('Hello, Python!')"
+    result = execute_python_code(code)
+    assert result['output'] == "Hello, Python!"
+    assert result['error'] is None
+
+def test_ruby_execution():
+    code = "puts 'Hello, Ruby!'"
+    result = execute_ruby_code(code)
+    assert result['output'] == "Hello, Ruby!"
+    assert result['error'] is None
+
+def test_go_execution():
+    code = 'package main\nimport "fmt"\nfunc main() { fmt.Println("Hello, Go!") }'
+    result = execute_go_code(code)
+    assert result['output'] == "Hello, Go!"
+    assert result['error'] is None
+
